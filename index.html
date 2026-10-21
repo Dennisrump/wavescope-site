@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wavescope: see the invisible signals around you</title>
+  <meta name="description" content="Wavescope shows the Wi-Fi, mobile networks, satellites, Bluetooth, magnetic fields and ultrasound your Android phone picks up, live, and explains what each signal is. Free, no ads, no tracking.">
+  <meta property="og:title" content="Wavescope">
+  <meta property="og:description" content="See the invisible signals around you. Free, no ads, no tracking.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="theme-color" content="#00696b">
+  <link rel="icon" href="assets/icon.png">
+  <style>
+    :root {
+      --bg: #f6fafa; --surface: #ffffff; --text: #102021; --muted: #4a6363;
+      --primary: #00696b; --primary-container: #9cf1f0; --border: #d6e4e4;
+      --hero-a: #00838f; --hero-b: #004d4d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1414; --surface: #142020; --text: #e0eeee; --muted: #9db7b7;
+        --primary: #80d5d4; --primary-container: #004f4f; --border: #233434;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    a { color: var(--primary); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    header.hero { background: linear-gradient(135deg, var(--hero-a), var(--hero-b)); color: #fff; padding: 56px 0 64px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 22px; }
+    .brand img { width: 52px; height: 52px; border-radius: 14px; }
+    h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.1; margin: 22px 0 14px; }
+    .hero p.lead { font-size: 20px; opacity: 0.92; margin: 0 0 26px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-block; padding: 14px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; }
+    .button.primary { background: #fff; color: #004d4d; }
+    .button.ghost { border: 2px solid rgba(255, 255, 255, 0.7); color: #fff; }
+    .hero .shot { justify-self: center; width: min(320px, 80vw); border-radius: 28px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill { background: rgba(255, 255, 255, 0.16); border-radius: 999px; padding: 6px 12px; font-size: 14px; }
+    section { padding: 64px 0; }
+    h2 { font-size: 32px; margin: 0 0 8px; }
+    .sub { color: var(--muted); margin: 0 0 36px; max-width: 680px; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .feature { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; }
+    .feature img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; background: #0b1414; }
+    .feature div { padding: 18px 20px 22px; }
+    .feature h3 { margin: 0 0 6px; font-size: 19px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+    .list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; padding: 0; list-style: none; }
+    .list li { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 16px 18px; }
+    .list strong { display: block; }
+    .privacy { background: var(--primary-container); }
+    details { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; }
+    summary { cursor: pointer; font-weight: 600; }
+    footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    @media (max-width: 760px) {
+      .hero .wrap { grid-template-columns: 1fr; }
+      header.hero { padding: 36px 0 44px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <div class="brand"><img src="assets/icon.png" alt="">Wavescope</div>
+        <h1>See the invisible signals around you</h1>
+        <p class="lead">Your phone is surrounded by Wi-Fi, mobile networks, satellites, Bluetooth, magnetic fields and even sound you can't hear. Wavescope shows them live, and explains what each one is.</p>
+        <div class="cta">
+          <!-- Replace with the Play Store link and the official badge once published. -->
+          <a class="button primary" href="mailto:wavescoperadar@gmail.com?subject=Wavescope%20beta">Join the beta on Android</a>
+          <a class="button ghost" href="#features">See what it shows</a>
+        </div>
+        <div class="pills"><span class="pill">Free</span><span class="pill">No ads</span><span class="pill">No tracking</span><span class="pill">Android 12+</span></div>
+      </div>
+      <img class="shot" src="assets/01-spectrum.png" alt="Wavescope's Spectrum screen: every signal the phone hears on one chart from 10 MHz to 10 GHz">
+    </div>
+  </header>
+
+  <main>
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything your phone can sense</h2>
+        <p class="sub">Wavescope reads your phone's own sensors and radios. No extra hardware needed.</p>
+        <div class="features">
+          <article class="feature"><img src="assets/02-wifi.png" alt="Wi-Fi channel graph" loading="lazy"><div><h3>Wi-Fi</h3><p>Networks on 2.4, 5 and 6 GHz, a channel graph to spot congestion, and the live signal of your own network.</p></div></article>
+          <article class="feature"><img src="assets/03-cellular.png" alt="Mobile network screen" loading="lazy"><div><h3>Mobile network</h3><p>Your 4G/5G cell, its band and frequency, signal quality, neighbouring cells and the distance to the tower.</p></div></article>
+          <article class="feature"><img src="assets/04-satellites.png" alt="Satellite sky plot" loading="lazy"><div><h3>Satellites</h3><p>GPS, Galileo, GLONASS and BeiDou on a live sky plot, with the frequencies they use.</p></div></article>
+          <article class="feature"><img src="assets/05-bluetooth.png" alt="Bluetooth proximity radar" loading="lazy"><div><h3>Bluetooth</h3><p>Devices and beacons nearby, recognised by type, on a proximity radar.</p></div></article>
+          <article class="feature"><img src="assets/07-map.png" alt="Live map with Wi-Fi heatmap and router markers" loading="lazy"><div><h3>Live map</h3><p>Record a walk and see heatmaps of Wi-Fi, mobile signal and magnetic anomalies, plus where routers and towers probably are. Export as GPX, CSV or GeoJSON.</p></div></article>
+        </div>
+        <h2 style="margin-top:56px">And more</h2>
+        <ul class="list">
+          <li><strong>Magnetic field</strong>A live µT gauge compared with Earth's expected field where you are.</li>
+          <li><strong>NFC</strong>Read tags and see what they contain. Bank cards and passports are never read.</li>
+          <li><strong>Ultrasound</strong>A spectrogram from 14 to 24 kHz to catch inaudible beacons, with a test tone.</li>
+          <li><strong>Explanations</strong>Every signal comes with a short explainer: what it is, where it comes from, what affects it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <div class="wrap">
+        <h2>Private by design</h2>
+        <p class="sub">No account, no ads, no analytics. Every measurement and every walk stays on your phone. The only thing Wavescope downloads is map tiles, and nothing leaves your phone unless you share a walk yourself.</p>
+        <a href="privacy-policy">Read the privacy policy</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Questions</h2>
+        <details><summary>Which phones does it work on?</summary><p>Android 12 or newer. What Wavescope can show depends on your phone's hardware: not every phone has 6 GHz Wi-Fi, NFC or a dual-frequency GPS, for example. Screens for missing hardware say so.</p></details>
+        <details><summary>Is it a radiation or EMF meter?</summary><p>No. Wavescope shows what your phone's own radios and sensors report, to learn and explore. It is not a calibrated measuring instrument or a health device.</p></details>
+        <details><summary>Why does it need location access?</summary><p>Android only shares Wi-Fi, mobile-cell and satellite details with apps that have location access. Wavescope also uses location to place recorded walks on the map. It all stays on your phone.</p></details>
+        <details><summary>How is it free?</summary><p>It's a passion project. There will be an optional way to support development, but nothing in the app is locked behind a payment.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Rump dev · <a href="privacy-policy">Privacy</a> · <a href="mailto:wavescoperadar@gmail.com">wavescoperadar@gmail.com</a></span>
+      <span>Map data © OpenStreetMap contributors, tiles by OpenFreeMap. Android is a trademark of Google LLC.</span>
+    </div>
+  </footer>
+</body>
+</html>
